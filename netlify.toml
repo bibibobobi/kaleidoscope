@@ -1,13 +1,13 @@
 [
-build.environment
-]
-  NODE_VERSION = "20.0.0"
-
-[
 build
 ]
   command = "yarn build"
   publish = "dist"
+
+[
+build.environment
+]
+  NODE_VERSION = "20"
 
 [[
 redirects
