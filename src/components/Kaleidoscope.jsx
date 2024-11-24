@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { usePageTitle } from "../hooks/usePageTitle";
 import "./kaleidoscope.css";
+import ShareButton from "./ShareButton";
 
 const colorSchemes = {
   sunset: ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEEAD"],
@@ -178,6 +179,7 @@ const Kaleidoscope = () => {
           <Container key={i} pattern={pattern} colorScheme={colorScheme} />
         ))}
       </div>
+      <ShareButton pattern={pattern} colorScheme={colorScheme} />
     </div>
   );
 };

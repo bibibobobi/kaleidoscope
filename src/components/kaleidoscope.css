@@ -49,6 +49,7 @@
   border-radius: 50%;
   overflow: hidden;
   transform: translate(calc(var(--tile-length) * -0.134), -50%);
+  margin: -1px;
 }
 
 .container:nth-child(1) {
@@ -91,6 +92,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-origin: center;
+  scale: 1.01;
 }
 
 .tile:nth-child(1) {
@@ -118,6 +121,8 @@
   width: calc(1.75 * var(--tile-length));
   animation: rotation var(--animation-duration) linear infinite,
     colorPulse 4s ease-in-out infinite;
+
+  filter: blur(0.2px);
 }
 
 @keyframes rotation {
@@ -152,4 +157,46 @@
 
 .select-control option {
   background: black;
+}
+
+.share-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.share-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.share-button:active {
+  transform: scale(0.95);
+}
+
+@media (hover: hover) {
+  .share-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .share-button {
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
 }
